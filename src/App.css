@@ -1,10 +1,21 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 60px;
+  width: 60px;
+}
+
+.app {
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+
+.app main {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,19 +24,199 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navbar {
+  border-color: blueviolet;
+  border-width: 5px;
+  border-style: solid;
+  background-color: #CCD755;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 99.3%;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  -width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 90%;
+  overflow: auto;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.sidebar li a {
+  list-style-type: none;
+  display: block;
+  color: black;
+  /* padding: 16px; */
+  text-decoration: none;
+}
+
+.sidebar li a svg{
+  padding-right: 15px;
+  transition: 0.3s;
+}
+
+.end-sidebar {
+  width: 270px;
+  height: 50px;
+  display: block;
+  position: fixed;
+  background-color: lightgray;
+  text-align: right;
+  bottom: 0;
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.shrink-sidebar {
+  width: 50px;
+  display: flex!important;
+  overflow: hidden!important;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.shrink-sidebar li a svg {
+  padding-right: 50px;
+  transition: 0.3s;
+}
+
+.shrink-sidebar .end-sidebar {
+  width: 50px!important;
+  display: block;
+  position: fixed;
+  background-color: lightgray;
+  text-align: center;
+  bottom: 0;
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.collapsed .end-sidebar {
+  width: 80px!important;
+  display: block;
+  position: fixed;
+  background-color: lightgray;
+  text-align: center;
+  bottom: 0;
+  visibility: visible;
+  transition: 0.3s;
+}
+
+/* Active/current link */
+.active {
+  background-color: #4CAF50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Links on mouse-over */
+.sidebar li:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-top: 75px;
+  margin-left: 265px;
+  padding: 1px 16px;
+  height: 1000px;
+  transition: 0.3s;
+}
+
+.shrink-sidebar .content {
+  margin-top: 75px;
+  margin-left: 40px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+.shrink-page {
+  margin-left: 60px!important;
+  transition: 0.3s;
+}
+
+.menu-button {
+  display: none;
+  visibility: hidden;
+}
+.user-icon {
+  top: 6px;
+  right: 7px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px!important;
+  position: fixed;
+  align-items: center;
+}
+
+.bottom-bar {
+  bottom: 0px;
+  margin-bottom: 0px;
+  margin-left: 5px!important;
+  padding-left: 10px;
+  width: 100%;
+  height: 40px!important;
+  position: fixed;
+  overflow: hidden;
+  display: block;
+  background-color: lime;
+}
+
+.before-bottom-bar {
+  min-height: 100%;
+  margin-bottom: -200px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    left: -300px;
+    transition: left 0.7s;
+  }
+  .mobile-active{
+    left: 0px!important;
+    width: 270px;
+    transition: left 0.7s;
+  }
+  .sidebar li {list-style-type: none;}
+  div.content {margin-left: 0;}
+
+  .menu-button {
+    display: initial;
+    visibility: visible;
+    position: fixed;
+    top: 2.5px;
+    right: 0px;
+  }
+
+  .menu-button img{
+    height: 60px;
+    width: 60px;
+  }
+
+  .end-sidebar {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 700px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
 }
 
 @keyframes App-logo-spin {
