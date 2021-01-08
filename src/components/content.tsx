@@ -4,7 +4,6 @@ import React from 'react';
 import 'react-pro-sidebar/dist/css/styles.css';
 
 const Content = ( props: any ) => {
-  console.log(props);
   
   const shrinkPage = props.shrinkPage;
 

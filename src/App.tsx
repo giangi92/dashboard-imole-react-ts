@@ -29,7 +29,7 @@ function App() {
           <MyProSidebar shrinkMenu={shrinkPage} setShrinkMenu={setShrink} toggled={toggled} handleToggleSidebar={handleToggleSidebar} />
           <div>
             <Switch>
-              {Routes.map((route, index) => (
+              {Routes.children.map((route, index) => (
                 // Render more <Route>s with the same paths as
                 // above, but different components this time.
                 <Route
@@ -37,6 +37,16 @@ function App() {
                   path={route.path}
                   exact={route.exact}
                   children={ <route.component shrinkPage={shrinkPage} handleToggleSidebar={handleToggleSidebar} /> }
+                />
+              ))}
+              {Routes.render.map((route, index) => (
+                // Render more <Route>s with the same paths as
+                // above, but different components this time.
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  render={(props) => (<route.component shrinkPage={shrinkPage} handleToggleSidebar={handleToggleSidebar} {...props} />)}
                 />
               ))}
             </Switch>
