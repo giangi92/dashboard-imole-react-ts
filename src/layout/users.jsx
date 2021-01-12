@@ -39,7 +39,7 @@ const Users = (props) => {
         <h1>Mostra tutti gli utenti</h1>
         <Link to="/add-user"><button className="add-button">Aggiungi Nuovo</button></Link>
       </div>
-      <div className="ag-theme-alpine" style={ { height: 400 } }>
+      <div className="ag-theme-alpine" style={ { height: 400, zIndex:9996 } }>
         <h3>Doppio click per modificare l'utente</h3>
           <AgGridReact
               rowData={users} 

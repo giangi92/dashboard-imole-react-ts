@@ -111,9 +111,6 @@ const AddUser = (props) => {
       >
         {({ isSubmitting }) => (
          <Form className="input-form">
-           <label htmlFor="id">Id</label>
-           <Field type="id" name="id" disabled />
-           <br />
            <label htmlFor="email">email</label>
            <Field type="email" name="email" />
            <ErrorMessage name="email" component="div" />
@@ -127,7 +124,10 @@ const AddUser = (props) => {
            <ErrorMessage name="string" component="div" />
            <br />
            <label htmlFor="type">type</label>
-           <Field type="type" name="type" />
+           <Field type="type" name="type" component="select">
+            <option value="CONSUMER">CONSUMER</option>
+            <option value="VENDOR">VENDOR</option>
+           </Field>
            <ErrorMessage name="string" component="div" />
            <br />
            <label htmlFor="address">Address</label>

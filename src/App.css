@@ -4,6 +4,14 @@
   width: 60px;
 }
 
+.sidebar-logo {
+  height: 80px;
+  width: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .app {
   display: flex;
   position: relative;
@@ -25,9 +33,9 @@
 }
 
 .navbar {
-  border-color: blueviolet;
-  border-width: 5px;
-  border-style: solid;
+  /* border-color: blueviolet; */
+  /* border-width: 5px; */
+  /* border-style: solid; */
   background-color: #CCD755;
   overflow: hidden;
   position: fixed;
@@ -60,6 +68,7 @@
   color: black;
   /* padding: 16px; */
   text-decoration: none;
+  z-index: 9999;
 }
 
 .sidebar li a svg{
@@ -72,7 +81,7 @@
   height: 50px;
   display: block;
   position: fixed;
-  background-color: lightgray;
+  background-color: rgb(26, 26, 26);
   text-align: right;
   bottom: 0;
   visibility: visible;
@@ -96,7 +105,7 @@
   width: 50px!important;
   display: block;
   position: fixed;
-  background-color: lightgray;
+  background-color: rgb(26, 26, 26);
   text-align: center;
   bottom: 0;
   visibility: visible;
@@ -107,7 +116,7 @@
   width: 80px!important;
   display: block;
   position: fixed;
-  background-color: lightgray;
+  background-color: rgb(26, 26, 26);
   text-align: center;
   bottom: 0;
   visibility: visible;
@@ -122,7 +131,7 @@
 
 /* Links on mouse-over */
 .sidebar li:hover:not(.active) {
-  background-color: #555;
+  background-color: #0047cc;
   color: white;
 }
 
@@ -166,12 +175,12 @@ div.content {
   margin-bottom: 0px;
   margin-left: -5px!important;
   padding-left: 10px;
-  width: 100%;
+  width: 90.5%;
   height: 40px!important;
   position: fixed;
   overflow: hidden;
   display: block;
-  background-color: lime;
+  /* background-color: lime; */
 }
 
 .shrink-page .bottom-bar {
@@ -226,7 +235,7 @@ div.content {
   margin-right: 20px;
   border-radius: 10px;
   border: none;
-  background: #42C2DF;
+  background: #52c8fa;
   color: white;
   font-size: 20px;
   transition: 0.4s;
@@ -239,6 +248,21 @@ div.content {
 
 /* Input form aggiungi e modifica */
 .input-form input {
+  display: block;
+  width: 260px;
+  height: 30px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin: 7px;
+  font-size: 17px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.05);
+  border: none;
+  transition: background 0.5s;
+}
+
+.input-form select {
   display: block;
   width: 260px;
   height: 30px;
@@ -275,7 +299,7 @@ div.content {
   margin-right: 20px;
   border-radius: 10px;
   border: none;
-  background: #42C2DF;
+  background: #52c8fa;
   color: white;
   font-size: 20px;
   transition: background 0.4s;
@@ -287,7 +311,7 @@ div.content {
 }
 
 .input-form button:hover{
-  background: #0077CC;
+  background: #0047cc;
   transition: background 0.4s;
 }
 

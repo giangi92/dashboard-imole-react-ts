@@ -160,7 +160,10 @@ const EditUser = (props) => {
            <ErrorMessage name="string" component="div" />
            <br />
            <label htmlFor="type">type</label>
-           <Field type="type" name="type" />
+           <Field type="type" name="type" component="select">
+            <option value="CONSUMER">CONSUMER</option>
+            <option value="VENDOR">VENDOR</option>
+           </Field>
            <ErrorMessage name="string" component="div" />
            <br />
            <label htmlFor="address">Address</label>

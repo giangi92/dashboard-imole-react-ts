@@ -4,6 +4,7 @@ import React from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarFooter, SidebarContent, SidebarHeader } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logos/logo.png'
 
 const MyProSidebar = (props: any) => {
     let shrinkSidebar = '';
@@ -16,7 +17,8 @@ const MyProSidebar = (props: any) => {
         <div className='sidebar'>
             <ProSidebar collapsed={shrinkMenu} breakPoint="md" toggled={props.toggled} onToggle={props.handleToggleSidebar}>
                 <SidebarHeader>
-                    <h1>Mitico Imole</h1>
+                    {/* <h1>Mitico Imole</h1> */}
+                    <img src={logo} alt="logo" className="sidebar-logo"></img>
                 </SidebarHeader>
                 <SidebarContent>
                     <Menu iconShape="square">
